@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <link rel="stylesheet"  href= "user.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        $(function() {
+		$("#search").click(function() {
+			$.ajax({
+				type: "GET",
+				url: "/ajax/query",
+				data: "search=s",
+				dataType: "json",
+
+				success:function(data){
+					var mydata = JSON.parse(data);
+					for(var i=0; i<mydata.length; i++){
+
+						$(".box-three").append('<div class="pro">'+"<h2>"+mydata[i].Record.org+"</h2>"+"<p>时间"+mydata[i].Record.date+"</p>"+"<p>金额"+mydata[i].Record.sum+"</p>"+"</div>")
+						console.log(mydata[i].Key);
+						console.log(mydata[i].Record.name);
+					}
+					alert("查询成功！");
+				},
+
+				error:function(msg){
+					alert("查询失败！");
+				}
+			});
+		});
+	});
+
+    </script>
+</head>
+<body>
+    <div class="box-one">  
+        <div class="box-one-one">
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-one" onclick=jump1()><img src="transfer.svg" style="width:55px"></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><img src="search.svg" style="width:55px"></button>
+        </div>      
+    </div>  
+    <div class="box-three" style="background-image: url(main.jpg); background-size: 100% 100%;">
+        <input type="text" placeholder="输入关键字查询">
+        <button id="search">查询</button>
+     </div>
+</body>

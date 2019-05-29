@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆主界面</title>
+    <link rel="stylesheet"  href= main.css type="text/css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+        // function load(){
+        //     window.location.href="user1.html";
+        // }
+	$(function() {
+            $("#login").click(function () {
+            //输入登录账号和密码，提示登录成功
+                var login=$("#username").val();
+                var pwsd=$("#password").val();
+
+                if (login == "" || pwsd == "") {
+                    alert("账户或密码不能为空！");
+                } 
+                else{
+                    $.ajax({
+                        type: "get",
+                        url: "/ajax/login", //修改url
+                        data: "username="+escape($('#username').val())+"&password="+escape($('#password').val()),
+                        dataType: "json",
+
+                        success:function(msg){
+                             alert(msg);
+                             window.location.href="user1.html";
+                         },
+                        error:function(msg){
+                            var a = JSON.parse(msg);
+                            alert(a);
+
+                        }
+                    });
+                }
+            });
+	});
+    </script>
+</head>>
+<body style="background-image: url(main.jpg); background-size: 100% 745%;">
+    <span class="title">基于区块链的慈善机构交易系统</span>
+    <div class="box">
+        <div class="box-logo">
+            <img src="logo.jpg" alt="This is a logo">
+     	</div>
+        <div class="box-one">
+            <input type="text" placeholder="账号" id="username">
+        </div>
+        <div class="box-one">
+            <input type="text" placeholder="密码" id="password">
+        </div>
+        <div class="box-two">
+            <a href="register.html">注册</a>
+        </div>
+        <div class="box-btn">
+            <button id="login">登陆</button>
+        </div>
+    </div>
+</body>
+
