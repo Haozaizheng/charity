@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <link rel="stylesheet"  href= "user.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        function jump1(){
+            window.location.href="user1.html";
+        }
+        function jump2(){
+            window.location.href="user2.html";
+        }
+
+        $(function () {
+            $("#donate").click(function () {
+                var amount=$("#amount").val();
+                if (amount == "") {
+                    alert("请输入捐款金额");
+                }         
+                else {
+                    $.ajax({
+					    type: "GET",
+					    url: "/ajax/donate",
+					    data: "amount="+ escape($("#amount").val()),
+					    dataType: "json",
+					    success:function(msg){
+						    window.location.href="user4.html";
+					    },	
+					    error:function(msg){
+						    alert("操作失败");
+					    }
+				    });
+                }
+            });
+    });
+
+    </script>
+</head>
+<body>
+    <div class="box-one">  
+        <div class="box-one-one">
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>                          -->
+            <button class="btn1" id="btn-one" onclick=jump1()><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+        </div>      
+    </div> 
+    <div class="box-four" style="background-image: url(main.jpg); background-size: 100% 100%;">
+        <div class="organize-name">中华志愿者协会</div>
+        <div class="para">
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中华志愿者协会（CHINA VOLUNTEERS ASSOCIATION，缩写为CVA）成立于2011年4月26日，是由志愿者以及关心和支持志愿服务事业的单位或组织自愿组成，按照章程开展活动的公益性、全国性社会团体组织。协会接受业务主管部门民政部和国家社团登记管理机关的业务指导、监督、管理，同时接受中央精神文明建设指导委员会办公室的业务指导。
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp本协会的宗旨：普及志愿理念、弘扬志愿精神，培育志愿文化，发展志愿服务事业，营造文明健康社会风尚、融洽和谐人际关系，推动经济社会又好又快发展，为全面建设小康社会、实现中华民族伟大复兴做出积极贡献。</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp协会任务：中华志愿者协会是全国性的公益性组织，协会将积极弘扬志愿服务精神；推动志愿者队伍建设；打造志愿服务项目品牌；加强志愿服务政策理论研究；健全志愿服务工作机制。同时逐步建立志愿者组织的社会认同和激励机制，保障志愿服务事业的社会化和可持续发展，改善社会风气和人际关系，推动志愿服务体系和多层次社会保障体制的建立和完善，大力推进我国社会主义精神文明建设。</p>
+        </div>
+        
+        <input type="text" placeholder="输入捐助金额" id="amount">
+        <button id="donate">捐助</button>
+    </div> 
+</body>
