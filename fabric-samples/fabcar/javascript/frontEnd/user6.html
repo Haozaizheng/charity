@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <link rel="stylesheet"  href= "user.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        function jump1(){
+            window.location.href="user1.html";
+        }
+        function jump2(){
+            window.location.href="user2.html";
+        }
+
+        $(function () {
+            $("#donate").click(function () {
+                var amount=$("#amount").val();
+                if (amount == "") {
+                    alert("请输入捐款金额");
+                }         
+                else {
+                    $.ajax({
+					    type: "GET",
+					    url: "/ajax/donate",
+					    data: "amount="+ escape($("#amount").val()),
+					    dataType: "json",
+					    success:function(msg){
+						    window.location.href="user4.html";
+					    },	
+					    error:function(msg){
+						    alert("操作失败");
+					    }
+				    });
+                }
+            });
+    });
+
+    </script>
+</head>
+<body>
+    <div class="box-one">  
+        <div class="box-one-one">
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>                          -->
+            <button class="btn1" id="btn-one" onclick=jump1()><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+        </div>      
+    </div> 
+    <div class="box-four" style="background-image: url(main.jpg); background-size: 100% 100%;">
+        <div class="organize-name">中国儿童少年基金会</div>
+        <div class="para">
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国儿童少年基金会（简称中国儿基会）成立于1981 年7 月28 日，是新中国成立后的第一家国家级公募基金会，隶属于全国妇联。康克清、陈慕华、顾秀莲、陈至立同志先后担任中国儿基会理事长（会长），现任理事长为全国妇联原党组书记、副主席、书记处第一书记宋秀岩。彭丽媛同志担任中国儿童少年基金会春蕾计划促进女童教育特使。</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国儿基会的宗旨是：抚育、培养、教育儿童少年，辅助国家发展儿童少年教育福利事业。春蕾计划、安康计划、儿童快乐家园、HELLO小孩是中国儿基会培育出的四大公益品牌。</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国儿基会始终不忘初心，坚守着一代又一代人薪火相传的爱与信念！缔造着一个又一个大手牵小手的温暖和奇迹！我们期待与您持续并肩携手，托起一个个孩子的梦想，托起一个民族的美好未来。</p>
+        </div>
+        
+        <input type="text" placeholder="输入捐助金额" id="amount">
+        <button id="donate">捐助</button>
+    </div> 
+</body>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户界面</title>
+    <link rel="stylesheet"  href= "user.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        function jump1(){
+            window.location.href="user1.html";
+        }
+        function jump2(){
+            window.location.href="user2.html";
+        }
+        function jump4(){
+            window.location.href="user4.html";
+        }
+
+        $(function () {
+            $("#donate").click(function () {
+                var amount=$("#amount").val();
+                if (amount == "") {
+                    alert("请输入捐款金额");
+                }         
+                else {
+                    $.ajax({
+					    type: "GET",
+					    url: "/ajax/donate",
+					    data: "amount="+ escape($("#amount").val()),
+					    dataType: "json",
+					    success:function(msg){
+						    window.location.href="user4.html";
+					    },	
+					    error:function(msg){
+						    alert("操作失败");
+					    }
+				    });
+                }
+            });
+    });
+
+    </script>
+</head>
+<body>
+    <div class="box-one">  
+        <div class="box-one-one">
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>                          -->
+            <button class="btn1" id="btn-one" onclick=jump1()><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><i class="fa fa-search fa-lg" aria-hidden="true"></i></button>
+        </div>      
+    </div> 
+    <div class="box-four" style="background-image: url(main.jpg); background-size: 100% 100%;">
+        <div class="organize-name">中国青年志愿者协会</div>
+        <div class="para">
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国青年志愿者协会成立于1994年12月5日，是由志愿从事社会公益事业与社会保障事业的各界青年组成的全国性社会团体 ，是中国共产主义青年团中央指导下的，由依法成立的省、自治区、直辖市青年志愿者组织和全国性的专业、行业青年志愿者组织和个人自愿结成的全国性的非营利性社会组织，是全国青联团体会员，联合国国际志愿服务协调委员会（CCIVS）联席会员组织。</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp适应社会主义市场经济发展的需要，推动青年志愿服务体系和多层次社会保障体系的建立和完善；公益中国爱心满世界培养青年的 公民意识、奉献精神和服务能力，促进青年健康成长；爱心满世界为具有特殊困难以及需要帮助的社会成员提供服务；培训青年志愿者；开展与海内外志愿者组织和团体的交流。</p>
+        </div>
+        
+        <input type="text" placeholder="输入捐助金额" id="amount">
+        <button id="donate">捐助</button>
+    </div> 
+</body>

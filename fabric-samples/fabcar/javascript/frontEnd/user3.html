@@ -5,6 +5,7 @@
     <title>用户界面</title>
     <link rel="stylesheet"  href= "user.css" type="text/css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script>
         function jump1(){
             window.location.href="user1.html";
@@ -42,13 +43,19 @@
 <body>
     <div class="box-one">  
         <div class="box-one-one">
-            <img src="avatar.jpg" class="round_icon"  alt="头像">                              
-            <button class="btn1" id="btn-one" onclick=jump1()>转账</button>
-            <button class="btn1" id="btn-two" onclick=jump2()>查询</button>
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-one" onclick=jump1()><img src="transfer.svg" style="width:55px"></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><img src="search.svg" style="width:55px"></button>
         </div>      
-    </div> 
-    <div class="box-four">
-        <div class="text">项目名称</div>
+    </div>  
+    <div class="box-four" style="background-image: url(main.jpg); background-size: 100% 100%;">
+        <div class="organize-name">中国红十字会</div>
+        <div class="para">
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国红十字会是中华人民共和国统一的红十字组织，是从事人道主义工作的社会救助团体，是国际红十字运动的重要成员。中国红十字会以保护人的生命和健康，维护人的尊严，发扬人道主义精神，促进和平进步事业为宗旨。
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp中国红十字会成立于1904年，建会以后从事救助难民、救护伤兵和赈济灾民活动，为减轻遭受战乱和自然灾害侵袭的民众的痛苦而积极工作，并参加国际人道主义救援活动。新中国成立后，中国红十字会于1950年进行了协商改组，周恩来总理亲自主持并修改了《中国红十字会章程》。1952年，中国红十字会恢复了在国际红十字运动中的合法席位。</p>
+            <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp长期以来，中国红十字会遵守宪法和法律，遵循国际红十字运动基本原则，依照中国参加的日内瓦公约及其附加议定书，认真履行法定职责，充分发挥其在人道领域的政府助手作用，为我国经济社会发展作出了重要贡献，成为社会主义和谐社会建设的重要力量、精神文明建设的生力军和民间外交的重要渠道。</p>
+        </div>
+        
         <input type="text" placeholder="输入捐助金额" id="amount">
         <button id="donate">捐助</button>
     </div> 

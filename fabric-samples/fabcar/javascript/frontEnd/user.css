@@ -2,15 +2,18 @@ body{
     background:#fff;
     padding: 0;
     margin: 0;
-}
+    background-size: contain;
+} 
+
 .box-one{
     width:110px;
-    height:750px;
+    height:760px;
     background: #ecebeb;
     position:fixed;
     left:0px; 
     bottom:0px;
     background-attachment:fixed;
+    background-color:#AAAAAA;
 }
 .box-one-one{
     position:absolute;
@@ -18,7 +21,7 @@ body{
     bottom:300px;
 }
 
-.round_icon{
+.round_con{
     width: 100px;
     height: 100px;
     display: flex;
@@ -28,12 +31,22 @@ body{
     overflow: hidden;
 }
 
+#btn-ex{
+    width:109px;
+    height:110px;
+    background:rgb(255, 255, 255);
+    font-size:30px;
+    border:0px solid black;
+    border-radius:20px;
+    border-radius:50px;
+}
 .btn1{
     width:109px;
     height:110px;
     background:rgb(255, 255, 255);
     font-size:30px;
     border:0px solid black;
+    border-radius:20px;
     cursor:pointer;
 }
 .btn1:hover{
@@ -45,17 +58,11 @@ body{
 }
 
 .box-two{
-    /* width:800px;
-    height:750px;
+    width:1400px;
+    height:772px;
     background: #ffffff;
     position:absolute;
     left:110px; 
-    bottom:0px; */
-    width:1000px;
-    height:700px;
-    background: #ffffff;
-    position:absolute;
-    left:120px; 
     bottom:0px;
 }
 
@@ -64,10 +71,12 @@ body{
     height:280px;
     position:relative;
     left:100px;
-    border:solid black 1px;
+    border:solid black 3px;
     margin-left:80px;
     margin-bottom:50px;
+    margin-top:50px;
     float:left;
+    border-radius:50px;
 }
 
 .org h1{
@@ -80,27 +89,38 @@ body{
     position:relative;
     left:150px;
 } 
+
 .btn2{
-    width:60px;
-    height:40px;
-    border-radius:5px;
-    border:none;
-    background:#179cda;
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    opacity: 1;
+    transition: all .6s;
     font-size:18px;
-    color:rgb(239, 244, 245);
-    cursor:pointer;
+    border-radius:20px;
     position:relative;
-    left:65px;
-    top:60px; 
+    left:48px;
+    top:50px; 
 }
 
+.btn2:hover {
+    background: rgb(255, 0, 0);
+    color: #fff;
+}
+
+.btn2:active{
+    opacity: .7;
+  }
 
 .box-three{
-    width:1000px;
-    height:700px;
+    width:1430px;
+    height:750px;
     background: #ffffff;
     position:absolute;
-    left:120px; 
+    left:110px; 
     bottom:0px;
 }
 .box-three input{
@@ -111,6 +131,7 @@ body{
     font-size:15px;
     position:relative;
     left:100px;
+    margin-top:50px;
 }
 
 .box-three button{
@@ -128,7 +149,7 @@ body{
 }
 .pro{
     width:800px;
-    height:150px;
+    height:170px;
     position:relative;
     left:100px;
     border:solid black 1px;
@@ -137,33 +158,44 @@ body{
 }
 
 .box-four{
-    width:1000px;
-    height:700px;
+    width:1400px;
+    height:750px;
     background: #ffffff;
     position:absolute;
-    left:120px; 
+    left:110px; 
     bottom:0px;
 }
 
-.text{
+.organize-name{
+    margin-top:50px;
+}
+
+.organize-name{
     font-size:40px;
     position:relative;
     left:500px;
-    bottom:-50px;
+} 
 
+.para{
+    width:1100px;
+    font-size:20px;
+    position:relative;
+    left:150px;
+    /*bottom:-50px; */
 }
+
 .box-four input{
     width:300px;
     height:50px;
     position:relative;
-    left:100px;
-    top:200px;
+    left:430px;
+    top:80px;
     font-size:25px;
     
 }
 .box-four button{
     width:80px;
-    height:60px;
+    height:56px;
     border-radius:5px;
     border:none;
     background:#6062d3;
@@ -171,8 +203,8 @@ body{
     color:rgb(239, 244, 245);
     cursor:pointer;
     position:relative;
-    left:100px;
-    bottom:-200px;
+    left:425px;
+    top:82px;
 
 }
 
@@ -181,10 +213,16 @@ body{
 }
 
 .box-five{
-    width:1000px;
-    height:500px;
+    width:1400px;
+    height:750px;
     background: #ffffff;
-    position:absolute;
-    left:200px; 
+    position:relative;
+    left:111px; 
     bottom:0px;
+}
+.show span{
+    font-size:50px;
+    color:rgb(255, 255, 255);
+    position:relative;
+    bottom:-260px;
 }

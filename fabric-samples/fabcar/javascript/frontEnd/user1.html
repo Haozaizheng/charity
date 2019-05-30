@@ -5,6 +5,7 @@
     <title>用户界面</title>
     <link rel="stylesheet"  href= "user.css" type="text/css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
     <script>
         function jump1(){
             window.location.href="user1.html";
@@ -15,18 +16,29 @@
         function jump3(){
             window.location.href="user3.html";
         }
-
+        function jump5(){
+            window.location.href="user5.html";
+        }
+        function jump6(){
+            window.location.href="user6.html";
+        }
+        function jump7(){
+            window.location.href="user7.html";
+        }
     </script>
 </head>
 <body>
     <div class="box-one">  
         <div class="box-one-one">
-            <img src="avatar.jpg" class="round_icon"  alt="头像">                              
-            <button class="btn1" id="btn-one" onclick=jump1()>转账</button>
-            <button class="btn1" id="btn-two" onclick=jump2()>查询</button>
+            <!-- <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-one" onclick=jump1()><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><i class="fa fa-search fa-lg" aria-hidden="true"></i></button> -->
+            <button id="btn-ex" onclick=jump1()><i class="fa fa-user-o fa-lg" aria-hidden="true"></i></button>
+            <button class="btn1" id="btn-one" onclick=jump1()><img src="transfer.svg" style="width:55px"></button>
+            <button class="btn1" id="btn-two" onclick=jump2()><img src="search.svg" style="width:55px"></button>
         </div>      
     </div>  
-    <div class="box-two">
+    <div class="box-two" style="background-image: url(main.jpg); background-size: 100% 100%;">
         <div class="org" id="org-one">
             <h1 class="org-name">红十字会</h3>
             <img src="logo11.jpg" class="logo1" alt="This is a logo" width="100" height="100">
@@ -35,18 +47,17 @@
         <div class="org" id="org-two">
             <h1 class="org-name">中华志愿者协会</h3>
             <img src="logo2.jpg" class="logo1" alt="This is a logo" width="100" height="100">
-            <button class="btn2">详情</button>
+            <button class="btn2" onclick=jump5()>详情</button>
         </div>
         <div class="org" id="org-three">
             <h1 class="org-name">中国儿童少年基金会</h3>
             <img src="logo3.jpg" class="logo1" alt="This is a logo" width="100" height="100">
-            <button class="btn2">详情</button>
+            <button class="btn2" onclick=jump6()>详情</button>
         </div>
         <div class="org" id="org-four">
             <h1 class="org-name">中国青年志愿者协会</h3>
             <img src="logo4.jpg" class="logo1" alt="This is a logo" width="100" height="100">
-            <button class="btn2">详情</button>
+            <button class="btn2" onclick=jump7()>详情</button>
         </div>
-        <div id="divappend"></div>
     </div>
 </body>
