@@ -5,6 +5,17 @@
     <title>用户界面</title>
     <link rel="stylesheet"  href= "user.css" type="text/css"> 
     <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+    <script>
+        function jump1(){
+            window.location.href="user1.html";
+        }
+        function jump2(){
+            window.location.href="user2.html";
+        }
+        function returnJump(){
+            window.location.href="user1.html";
+        }
+    </script>
 </head>
 <body>
     <div class="box-one">  
@@ -18,5 +29,6 @@
         <div class="show">
             <span>捐助成功，感谢您对慈善事业的支持！</span>
         </div>
+        <button class="return" onclick=returnJump()>返回</button>
     </div>
 </body>
